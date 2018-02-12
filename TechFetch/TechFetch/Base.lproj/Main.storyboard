@@ -33,6 +33,9 @@
                                     <navigationItem title="TechFetch" id="aj5-8F-pnG">
                                         <barButtonItem key="leftBarButtonItem" title="Source" id="6nN-pm-gzS">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="menuPressed:" destination="BYZ-38-t0r" id="t1t-1n-qDJ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

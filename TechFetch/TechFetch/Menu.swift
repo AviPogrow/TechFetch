@@ -17,11 +17,21 @@ class Menu {
             darkView.frame = window.frame
             darkView.backgroundColor = UIColor(white: 0, alpha: 0.3)
             
+            darkView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.closeMenu)))
+            
             window.addSubview(darkView)
             
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.4, animations: {
                 self.darkView.alpha = 1
             })
         }
     }
+    
+    @objc public func closeMenu() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.darkView.alpha = 0
+        })
+    }
+    
+    
 }

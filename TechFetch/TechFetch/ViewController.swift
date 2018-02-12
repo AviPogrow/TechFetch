@@ -19,7 +19,11 @@ class ViewController: UIViewController {
         fetchArticles()
     }
     
-
+    let menu = Menu()
+    @IBAction func menuPressed(_ sender: Any) {
+        menu.openMenu()
+    }
+    
 }
 
 extension ViewController {
