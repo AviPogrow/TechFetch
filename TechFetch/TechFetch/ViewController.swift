@@ -13,23 +13,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     var articles: [Article]? = []
+    var source = "techcrunch"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchArticles()
+        fetchArticles(fromSource: source)
     }
     
     let menu = Menu()
     @IBAction func menuPressed(_ sender: Any) {
         menu.openMenu()
+        menu.mainVC = self
     }
     
 }
 
 extension ViewController {
     
-    func fetchArticles() {
-        let urlString = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=600327379ddc468db9d7a55a47e56599"
+    func fetchArticles(fromSource provider: String) {
+        let urlString = "https://newsapi.org/v2/top-headlines?sources=\(provider)&apiKey=600327379ddc468db9d7a55a47e56599"
         let url = URL(string: urlString)
         let urlRequest = URLRequest(url: url!)
         

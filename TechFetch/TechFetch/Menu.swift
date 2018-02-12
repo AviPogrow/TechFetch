@@ -13,6 +13,7 @@ class Menu: NSObject, UITableViewDelegate, UITableViewDataSource {
     let darkView = UIView()
     let menuTableView = UITableView()
     let arrayOfSources = ["TechCrunch", "TechRadar"]
+    var mainVC: ViewController?
     
     public func openMenu() {
         if let window = UIApplication.shared.keyWindow {
@@ -65,7 +66,11 @@ class Menu: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        if let vc = mainVC {
+            vc.source = arrayOfSources[indexPath.item]
+            vc.fetchArticles(fromSource: vc.source)
+            closeMenu()
+        }
     }
     
     
